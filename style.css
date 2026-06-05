@@ -28,7 +28,7 @@
 
 html {
   scroll-behavior: auto;
-  background: #04040c;
+  background: #000;
   color: var(--white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -37,44 +37,15 @@ html {
 
 body {
   font-family: 'Inter', system-ui, sans-serif;
-  background: #04040c;
+  background: #000;
   color: var(--white);
   overflow-x: hidden;
   line-height: 1.6;
 }
 
-/* ═══════════════════════════════════════════
-   COSMIC BACKGROUND — shared across sections
-═══════════════════════════════════════════ */
+/* All sections — plain black */
 .cosmic-bg {
-  position: relative;
-  overflow: hidden;
-  background:
-    radial-gradient(ellipse 65% 45% at 4%   0%,  rgba(112,26,255,0.40) 0%, transparent 65%),
-    radial-gradient(ellipse 50% 35% at 97%  4%,  rgba(6,182,212,0.30)  0%, transparent 60%),
-    radial-gradient(ellipse 55% 38% at 2%   55%, rgba(95,20,220,0.20)  0%, transparent 58%),
-    radial-gradient(ellipse 45% 32% at 98%  52%, rgba(6,182,212,0.15)  0%, transparent 56%),
-    radial-gradient(ellipse 70% 48% at 10% 100%, rgba(112,26,255,0.35) 0%, transparent 65%),
-    radial-gradient(ellipse 52% 36% at 90%  97%, rgba(6,182,212,0.20)  0%, transparent 60%),
-    #04040c;
-}
-
-/* Dark overlay on top of the gradient */
-.cosmic-bg::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Push section content above overlay */
-.cosmic-bg > .container,
-.cosmic-bg > .cta-inner,
-.cosmic-bg .container {
-  position: relative;
-  z-index: 1;
+  background: #000;
 }
 
 a { color: inherit; text-decoration: none; }
