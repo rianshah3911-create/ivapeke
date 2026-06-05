@@ -53,6 +53,7 @@
 
   const SENSITIVITY    = 0.012;  // seconds per px of scroll delta
   const LOCK_THRESHOLD = 8;      // px from top before intercepting
+  const FREEZE_OFFSET  = 5 / 30; // freeze 5 frames (~0.17s) before the last frame
 
   let duration      = 0;
   let videoReady    = false;
@@ -72,16 +73,17 @@
   }
 
   function scrub(delta) {
-    const newTime = Math.max(0, Math.min(duration, video.currentTime + delta * SENSITIVITY));
+    const freezeAt = duration - FREEZE_OFFSET;
+    const newTime  = Math.max(0, Math.min(freezeAt, video.currentTime + delta * SENSITIVITY));
     video.currentTime = newTime;
 
-    const pct = duration > 0 ? (newTime / duration) * 100 : 0;
+    const pct = freezeAt > 0 ? (newTime / freezeAt) * 100 : 0;
     progressBar.style.width = pct + '%';
 
     if (delta > 0) scrollHint.style.opacity = Math.max(0, 1 - newTime / 0.4) + '';
 
-    // Once end is reached, mark complete — scroll is unlocked permanently
-    if (newTime >= duration) {
+    // Freeze at the 5th-last frame — unlock scroll permanently
+    if (newTime >= freezeAt) {
       videoComplete = true;
       progressWrap.classList.remove('visible');
     }

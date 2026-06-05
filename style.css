@@ -242,6 +242,12 @@ img, video { display: block; max-width: 100%; }
   pointer-events: none;
 }
 
+@media (max-width: 768px) {
+  .hero-video {
+    object-fit: contain;
+  }
+}
+
 .hero-scroll-hint {
   position: absolute;
   bottom: 36px;
