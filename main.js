@@ -45,11 +45,9 @@
      is removed and normal page scroll resumes.
      Scrolling back up to the hero re-enters scrub mode.
   ═══════════════════════════════════════════════════ */
-  const video       = document.getElementById('heroVideo');
-  const hero        = document.getElementById('hero');
-  const scrollHint  = document.getElementById('scrollHint');
-  const progressWrap = document.querySelector('.hero-progress-wrap');
-  const progressBar  = document.getElementById('heroProgressBar');
+  const video      = document.getElementById('heroVideo');
+  const hero       = document.getElementById('hero');
+  const scrollHint = document.getElementById('scrollHint');
 
   const SENSITIVITY    = 0.012;  // seconds per px of scroll delta
   const LOCK_THRESHOLD = 8;      // px from top before intercepting
@@ -79,19 +77,8 @@
     const newTime  = Math.max(0, Math.min(freezeAt, video.currentTime + delta * SENSITIVITY));
     video.currentTime = newTime;
 
-    // Progress bar (0 → 100% maps to 0 → freezeAt)
-    const pct = freezeAt > 0 ? (newTime / freezeAt) * 100 : 0;
-    progressBar.style.width = pct + '%';
-
     // Fade scroll hint as soon as user starts scrolling down
     if (delta > 0) scrollHint.style.opacity = Math.max(0, 1 - newTime / 0.4) + '';
-
-    // Show / hide progress bar
-    if (newTime > 0 && newTime < freezeAt) {
-      progressWrap.classList.add('visible');
-    } else {
-      progressWrap.classList.remove('visible');
-    }
   }
 
   /* ── Wheel ─────────────────────────────────────── */
@@ -276,5 +263,6 @@
       t.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
+
 
 })();
