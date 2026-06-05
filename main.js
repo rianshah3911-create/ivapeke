@@ -53,12 +53,11 @@
 
   const SENSITIVITY    = 0.012;  // seconds per px of scroll delta
   const LOCK_THRESHOLD = 8;      // px from top before intercepting
-  const FREEZE_OFFSET  = 5 / 30; // freeze 5 frames (~0.17s) before the last frame
+  const FREEZE_OFFSET  = 5 / 30; // stop 5 frames (~0.17s) before the very last frame
 
-  let duration      = 0;
-  let videoReady    = false;
-  let videoComplete = false;     // true once the video has played to the end — permanent
-  let touchLastY    = 0;
+  let duration   = 0;
+  let videoReady = false;
+  let touchLastY = 0;
 
   /* ── Helpers ───────────────────────────────────── */
   function heroIsActive() {
@@ -66,9 +65,12 @@
   }
 
   function shouldIntercept(deltaY) {
-    if (!videoReady || videoComplete) return false; // released forever once done
-    if (!heroIsActive()) return false;
-    if (video.currentTime <= 0 && deltaY < 0) return false; // allow scroll up at start
+    if (!videoReady || !heroIsActive()) return false;
+    const freezeAt = duration - FREEZE_OFFSET;
+    // At the freeze frame scrolling down → release, page scrolls to next section
+    if (video.currentTime >= freezeAt && deltaY > 0) return false;
+    // At the very start scrolling up → release, page scrolls up freely
+    if (video.currentTime <= 0 && deltaY < 0) return false;
     return true;
   }
 
@@ -77,14 +79,17 @@
     const newTime  = Math.max(0, Math.min(freezeAt, video.currentTime + delta * SENSITIVITY));
     video.currentTime = newTime;
 
+    // Progress bar (0 → 100% maps to 0 → freezeAt)
     const pct = freezeAt > 0 ? (newTime / freezeAt) * 100 : 0;
     progressBar.style.width = pct + '%';
 
+    // Fade scroll hint as soon as user starts scrolling down
     if (delta > 0) scrollHint.style.opacity = Math.max(0, 1 - newTime / 0.4) + '';
 
-    // Freeze at the 5th-last frame — unlock scroll permanently
-    if (newTime >= freezeAt) {
-      videoComplete = true;
+    // Show / hide progress bar
+    if (newTime > 0 && newTime < freezeAt) {
+      progressWrap.classList.add('visible');
+    } else {
       progressWrap.classList.remove('visible');
     }
   }
@@ -116,6 +121,29 @@
     scrub(delta);
   }, { passive: false });
 
+  /* ── Mobile hero height ─────────────────────────── */
+  // Must match --nav-clear: 14px (top) + 48px (height) + 14px (gap) = 76px
+  const NAV_CLEAR = 76;
+
+  function fitMobileHero() {
+    if (window.innerWidth > 768) {
+      hero.style.height = '';   // restore CSS default (100svh) on desktop
+      return;
+    }
+    if (!video.videoWidth || !video.videoHeight) return;
+
+    const vw    = window.innerWidth;
+    const vh    = window.innerHeight;
+    const ratio = video.videoWidth / video.videoHeight;
+
+    // Height the video renders at (object-fit: contain, fills full width)
+    let renderedH = vw / ratio;
+    if (renderedH > vh - NAV_CLEAR) renderedH = vh - NAV_CLEAR;
+
+    // Hero height = nav clearance + rendered video height (no black gaps)
+    hero.style.height = (NAV_CLEAR + renderedH) + 'px';
+  }
+
   /* ── Video load ────────────────────────────────── */
   function initVideo() {
     video.pause();
@@ -128,6 +156,7 @@
       if (!isFinite(video.duration) || video.duration === 0) return;
       duration   = video.duration;
       videoReady = true;
+      fitMobileHero();
     }
 
     if (video.readyState >= 1 && isFinite(video.duration) && video.duration > 0) {
@@ -139,6 +168,19 @@
   }
 
   initVideo();
+
+  /* ── Resize / orientation ────────────────────────── */
+  let resizeTimer;
+  const onResize = () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(fitMobileHero, 120);
+  };
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', onResize);
+  } else {
+    window.addEventListener('resize', onResize);
+  }
+  window.addEventListener('orientationchange', () => setTimeout(fitMobileHero, 300));
 
   /* ═══════════════════════════════════════════════════
      SCROLL REVEAL — Intersection Observer

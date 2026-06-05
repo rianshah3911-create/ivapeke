@@ -18,6 +18,10 @@
   --green:    #10b981;
   --red:      #ef4444;
   --nav-h:    48px;
+  --nav-top:  14px;
+  --nav-gap:  14px;
+  /* total clearance: navbar top offset + height + gap below */
+  --nav-clear: calc(var(--nav-top) + var(--nav-h) + var(--nav-gap));
   --radius:   16px;
   --radius-lg:24px;
 }
@@ -223,9 +227,11 @@ img, video { display: block; max-width: 100%; }
 
 .hero-video-wrap {
   position: absolute;
-  inset: 0;
+  top: var(--nav-clear);
+  left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
-  height: 100%;
 }
 
 .hero-video {
@@ -330,7 +336,7 @@ section {
    FEATURES
 ═══════════════════════════════════════════ */
 .features {
-  padding: 120px 0;
+  padding: 60px 0 120px;
   background: var(--dark);
 }
 
