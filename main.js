@@ -85,10 +85,6 @@
   window.addEventListener('wheel', (e) => {
     if (!shouldIntercept(e.deltaY)) return;
     e.preventDefault();
-
-    // Show progress bar on first scroll
-    progressWrap.classList.add('visible');
-
     scrub(e.deltaY);
   }, { passive: false });
 
@@ -98,13 +94,10 @@
   }, { passive: true });
 
   window.addEventListener('touchmove', (e) => {
-    const delta = touchLastY - e.touches[0].clientY; // +ve = swipe up = scroll down
+    const delta = touchLastY - e.touches[0].clientY;
     touchLastY = e.touches[0].clientY;
-
     if (!shouldIntercept(delta)) return;
     e.preventDefault();
-
-    progressWrap.classList.add('visible');
     scrub(delta);
   }, { passive: false });
 
@@ -153,6 +146,10 @@
       video.addEventListener('durationchange', () => { if (!videoReady) onReady(); });
     }
   }
+
+  // Ensure page always starts at the top (prevents browser scroll restoration)
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  window.scrollTo(0, 0);
 
   initVideo();
 
