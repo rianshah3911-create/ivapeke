@@ -133,8 +133,8 @@ img, video { display: block; max-width: 100%; }
 .nav-logo {
   font-family: 'Syne', sans-serif;
   font-weight: 800;
-  font-size: 1.1rem;
-  letter-spacing: 0.14em;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
   background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -808,8 +808,8 @@ section {
 .footer-logo {
   font-family: 'Syne', sans-serif;
   font-weight: 800;
-  font-size: 1.6rem;
-  letter-spacing: 0.12em;
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
   margin-bottom: 16px;
   background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.6) 100%);
   -webkit-background-clip: text;
@@ -950,8 +950,8 @@ section {
 .age-logo {
   font-family: 'Syne', sans-serif;
   font-weight: 800;
-  font-size: 2.5rem;
-  letter-spacing: 0.15em;
+  font-size: 1.6rem;
+  letter-spacing: 0.1em;
   margin-bottom: 32px;
   background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.6) 100%);
   -webkit-background-clip: text;
