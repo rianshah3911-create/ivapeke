@@ -51,7 +51,8 @@
 
   const SENSITIVITY    = 0.012;  // seconds per px of scroll delta
   const LOCK_THRESHOLD = 8;      // px from top before intercepting
-  const FREEZE_OFFSET  = 5 / 30; // stop 5 frames (~0.17s) before the very last frame
+  const FREEZE_OFFSET  = 5 / 30; // video clamps here (5 frames before last)
+  const RELEASE_EARLY  = 0.8;    // scroll unlocks this many seconds before the freeze point
 
   let duration   = 0;
   let videoReady = false;
@@ -64,10 +65,10 @@
 
   function shouldIntercept(deltaY) {
     if (!videoReady || !heroIsActive()) return false;
-    const freezeAt = duration - FREEZE_OFFSET;
-    // At the freeze frame scrolling down → release, page scrolls to next section
-    if (video.currentTime >= freezeAt && deltaY > 0) return false;
-    // At the very start scrolling up → release, page scrolls up freely
+    const releaseAt = duration - FREEZE_OFFSET - RELEASE_EARLY;
+    // Release scroll early — before the last few frames
+    if (video.currentTime >= releaseAt && deltaY > 0) return false;
+    // At the very start, allow scroll up freely
     if (video.currentTime <= 0 && deltaY < 0) return false;
     return true;
   }
