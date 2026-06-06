@@ -52,7 +52,7 @@
   const SENSITIVITY    = 0.012;  // seconds per px of scroll delta
   const LOCK_THRESHOLD = 8;      // px from top before intercepting
   const FREEZE_OFFSET  = 5 / 30; // video clamps here (5 frames before last)
-  const RELEASE_EARLY  = 0.8;    // scroll unlocks this many seconds before the freeze point
+  const BLEND_DURATION = 1.5;    // seconds before freeze where scroll blends in
 
   let duration   = 0;
   let videoReady = false;
@@ -63,30 +63,38 @@
     return window.scrollY <= hero.offsetTop + LOCK_THRESHOLD;
   }
 
-  function shouldIntercept(deltaY) {
-    if (!videoReady || !heroIsActive()) return false;
-    const releaseAt = duration - FREEZE_OFFSET - RELEASE_EARLY;
-    // Release scroll early — before the last few frames
-    if (video.currentTime >= releaseAt && deltaY > 0) return false;
-    // At the very start, allow scroll up freely
-    if (video.currentTime <= 0 && deltaY < 0) return false;
-    return true;
-  }
-
   function scrub(delta) {
     const freezeAt = duration - FREEZE_OFFSET;
     const newTime  = Math.max(0, Math.min(freezeAt, video.currentTime + delta * SENSITIVITY));
     video.currentTime = newTime;
-
-    // Fade scroll hint as soon as user starts scrolling down
     if (delta > 0) scrollHint.style.opacity = Math.max(0, 1 - newTime / 0.4) + '';
   }
 
   /* ── Wheel ─────────────────────────────────────── */
   window.addEventListener('wheel', (e) => {
-    if (!shouldIntercept(e.deltaY)) return;
-    e.preventDefault();
-    scrub(e.deltaY);
+    if (!videoReady || !heroIsActive()) return;
+
+    const freezeAt  = duration - FREEZE_OFFSET;
+    const blendStart = freezeAt - BLEND_DURATION;
+
+    if (e.deltaY > 0) {
+      if (video.currentTime < blendStart) {
+        // LOCK zone — fully intercept, scrub video only
+        e.preventDefault();
+        scrub(e.deltaY);
+      } else if (video.currentTime < freezeAt) {
+        // BLEND zone — scrub video AND let page scroll simultaneously
+        scrub(e.deltaY);
+        // no preventDefault → natural page scroll runs alongside
+      }
+      // past freezeAt → pure page scroll, do nothing
+    } else {
+      // Scrolling UP — rewind video while at top
+      if (video.currentTime > 0) {
+        e.preventDefault();
+        scrub(e.deltaY);
+      }
+    }
   }, { passive: false });
 
   /* ── Touch ─────────────────────────────────────── */
@@ -95,11 +103,26 @@
   }, { passive: true });
 
   window.addEventListener('touchmove', (e) => {
-    const delta = touchLastY - e.touches[0].clientY;
-    touchLastY = e.touches[0].clientY;
-    if (!shouldIntercept(delta)) return;
-    e.preventDefault();
-    scrub(delta);
+    if (!videoReady || !heroIsActive()) return;
+    const delta      = touchLastY - e.touches[0].clientY;
+    touchLastY       = e.touches[0].clientY;
+
+    const freezeAt   = duration - FREEZE_OFFSET;
+    const blendStart = freezeAt - BLEND_DURATION;
+
+    if (delta > 0) {
+      if (video.currentTime < blendStart) {
+        e.preventDefault();
+        scrub(delta);
+      } else if (video.currentTime < freezeAt) {
+        scrub(delta); // blend: no preventDefault
+      }
+    } else {
+      if (video.currentTime > 0) {
+        e.preventDefault();
+        scrub(delta);
+      }
+    }
   }, { passive: false });
 
   /* ── Mobile hero height ─────────────────────────── */
