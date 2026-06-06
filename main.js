@@ -51,8 +51,7 @@
 
   const SENSITIVITY    = 0.012;  // seconds per px of scroll delta
   const LOCK_THRESHOLD = 8;      // px from top before intercepting
-  const FREEZE_OFFSET  = 5 / 30; // video clamps here (5 frames before last)
-  const BLEND_DURATION = 1.5;    // seconds before freeze where scroll blends in
+  const FREEZE_OFFSET  = 5 / 30; // freeze 5 frames before the last frame
 
   let duration   = 0;
   let videoReady = false;
@@ -61,6 +60,14 @@
   /* ── Helpers ───────────────────────────────────── */
   function heroIsActive() {
     return window.scrollY <= hero.offsetTop + LOCK_THRESHOLD;
+  }
+
+  function shouldIntercept(deltaY) {
+    if (!videoReady || !heroIsActive()) return false;
+    const freezeAt = duration - FREEZE_OFFSET;
+    if (video.currentTime >= freezeAt && deltaY > 0) return false; // release at end
+    if (video.currentTime <= 0 && deltaY < 0) return false;        // release at start
+    return true;
   }
 
   function scrub(delta) {
@@ -72,29 +79,9 @@
 
   /* ── Wheel ─────────────────────────────────────── */
   window.addEventListener('wheel', (e) => {
-    if (!videoReady || !heroIsActive()) return;
-
-    const freezeAt  = duration - FREEZE_OFFSET;
-    const blendStart = freezeAt - BLEND_DURATION;
-
-    if (e.deltaY > 0) {
-      if (video.currentTime < blendStart) {
-        // LOCK zone — fully intercept, scrub video only
-        e.preventDefault();
-        scrub(e.deltaY);
-      } else if (video.currentTime < freezeAt) {
-        // BLEND zone — scrub video AND let page scroll simultaneously
-        scrub(e.deltaY);
-        // no preventDefault → natural page scroll runs alongside
-      }
-      // past freezeAt → pure page scroll, do nothing
-    } else {
-      // Scrolling UP — rewind video while at top
-      if (video.currentTime > 0) {
-        e.preventDefault();
-        scrub(e.deltaY);
-      }
-    }
+    if (!shouldIntercept(e.deltaY)) return;
+    e.preventDefault();
+    scrub(e.deltaY);
   }, { passive: false });
 
   /* ── Touch ─────────────────────────────────────── */
@@ -103,26 +90,11 @@
   }, { passive: true });
 
   window.addEventListener('touchmove', (e) => {
-    if (!videoReady || !heroIsActive()) return;
-    const delta      = touchLastY - e.touches[0].clientY;
-    touchLastY       = e.touches[0].clientY;
-
-    const freezeAt   = duration - FREEZE_OFFSET;
-    const blendStart = freezeAt - BLEND_DURATION;
-
-    if (delta > 0) {
-      if (video.currentTime < blendStart) {
-        e.preventDefault();
-        scrub(delta);
-      } else if (video.currentTime < freezeAt) {
-        scrub(delta); // blend: no preventDefault
-      }
-    } else {
-      if (video.currentTime > 0) {
-        e.preventDefault();
-        scrub(delta);
-      }
-    }
+    const delta = touchLastY - e.touches[0].clientY;
+    touchLastY  = e.touches[0].clientY;
+    if (!shouldIntercept(delta)) return;
+    e.preventDefault();
+    scrub(delta);
   }, { passive: false });
 
   /* ── Mobile hero height ─────────────────────────── */
