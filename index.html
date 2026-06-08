@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>IVAPEKENYA — Premium Vapes</title>
+  <title>iVapeKenya — Premium Vapes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -50,6 +50,7 @@
         preload="auto"
         webkit-playsinline
         x-webkit-airplay="deny"
+        loop
       ></video>
     </div>
     <div class="hero-scroll-hint" id="scrollHint">
@@ -103,6 +104,7 @@
 
         <a class="cat-card cat-soon" href="#">
           <div class="cat-img-wrap">
+            <img src="assets/images/categories/kits.jpg" alt="Vape Kits" class="cat-img" onerror="this.style.display='none'" />
             <div class="cat-fallback-bg" style="--c1:#f59e0b;--c2:#ef4444"></div>
           </div>
           <div class="cat-info">
@@ -114,6 +116,7 @@
 
         <a class="cat-card cat-soon" href="#">
           <div class="cat-img-wrap">
+            <img src="assets/images/categories/eliquids.jpg" alt="E-Liquids" class="cat-img" onerror="this.style.display='none'" />
             <div class="cat-fallback-bg" style="--c1:#10b981;--c2:#06b6d4"></div>
           </div>
           <div class="cat-info">
@@ -125,6 +128,7 @@
 
         <a class="cat-card cat-soon" href="#">
           <div class="cat-img-wrap">
+            <img src="assets/images/categories/accessories.jpg" alt="Accessories" class="cat-img" onerror="this.style.display='none'" />
             <div class="cat-fallback-bg" style="--c1:#9333ea;--c2:#ec4899"></div>
           </div>
           <div class="cat-info">
@@ -135,80 +139,358 @@
         </a>
 
       </div>
+      <div class="cat-shop-now">
+        <a href="disposables.html" class="btn btn-primary">Shop Now</a>
+      </div>
     </div>
   </section>
 
-  <!-- BEST SELLERS -->
-  <section class="bestsellers cosmic-bg" id="bestsellers">
+  <!-- BEST SELLERS — COVERFLOW -->
+  <section class="bestsellers" id="bestsellers">
     <div class="container">
       <div class="section-label">Top Picks</div>
       <h2 class="section-title">Best Sellers</h2>
-      <div class="carousel-wrap">
-        <div class="carousel" id="carousel">
+    </div>
+    <div class="cov-wrap">
+      <div class="cov-stage" id="covStage">
 
-          <div class="product-card">
-            <div class="product-badge">🔥 Hot</div>
+        <div class="cov-card" data-name="OxBar Tri-Fusion 45000" data-brand="OxBar" data-price="Ksh 3,500" data-specs="45,000 puffs|5% Nic|Rechargeable" data-flavours='["Double Mint","Peach Watermelon","Blueberry Raspberry","Grape Raspberry","Peach Berries","Cherry Lemonade","Passion Fruit Raspberry Grape","Watermelon Ice","Cherry Strawberry","Pineapple Mango Watermelon","Sakura Grape","Apple Mango Kiwi","Strawberry Grape","Strawberry Kiwi Watermelon"]'>
+          <div class="cov-badge">Hot</div>
+          <img src="assets/images/products/oxbar-tri-fusion.jpg" alt="OxBar Tri-Fusion 45000" class="cov-img" onerror="this.style.display='none'" />
+          <div class="cov-img-fallback" style="--c1:#a78bfa;--c2:#06b6d4"></div>
+          <div class="cov-overlay">
+            <span class="cov-brand">OxBar</span>
+            <h3 class="cov-name">Tri-Fusion 45000</h3>
+            <div class="cov-specs"><span>45,000 puffs</span><span>5% Nic</span><span>Rechargeable</span></div>
+            <div class="cov-foot"><span class="cov-price">Ksh 3,500</span><button class="cov-order-btn" data-open-modal>Choose Flavour</button></div>
+          </div>
+        </div>
+
+        <div class="cov-card" data-name="Lost Mary MT35000 Turbo" data-brand="Lost Mary" data-price="Ksh 2,800" data-specs="35,000 puffs|5% Nic|Rechargeable" data-flavours='["VCT","Cola Ice","Desert Oasis","Blueberry Ice","Watermelon Ice"]'>
+          <div class="cov-badge">Popular</div>
+          <img src="assets/images/products/lostmary-mt35000.jpg" alt="Lost Mary MT35000" class="cov-img" onerror="this.style.display='none'" />
+          <div class="cov-img-fallback" style="--c1:#10b981;--c2:#06b6d4"></div>
+          <div class="cov-overlay">
+            <span class="cov-brand">Lost Mary</span>
+            <h3 class="cov-name">MT35000 Turbo</h3>
+            <div class="cov-specs"><span>35,000 puffs</span><span>5% Nic</span><span>Rechargeable</span></div>
+            <div class="cov-foot"><span class="cov-price">Ksh 2,800</span><button class="cov-order-btn" data-open-modal>Choose Flavour</button></div>
+          </div>
+        </div>
+
+        <div class="cov-card" data-name="OxBar G-Turbo 36000" data-brand="OxBar" data-price="Ksh 3,200" data-specs="36,000 puffs|5% Nic|Rechargeable" data-flavours='["Blueberry Raspberry","Sakura Grape","Apple Peach Ice","Jade Mint","Mango Pineapple"]'>
+          <img src="assets/images/products/oxbar-g-turbo.jpg" alt="OxBar G-Turbo 36000" class="cov-img" onerror="this.style.display='none'" />
+          <div class="cov-img-fallback" style="--c1:#7c3aed;--c2:#a78bfa"></div>
+          <div class="cov-overlay">
+            <span class="cov-brand">OxBar</span>
+            <h3 class="cov-name">G-Turbo 36000</h3>
+            <div class="cov-specs"><span>36,000 puffs</span><span>5% Nic</span><span>Rechargeable</span></div>
+            <div class="cov-foot"><span class="cov-price">Ksh 3,200</span><button class="cov-order-btn" data-open-modal>Choose Flavour</button></div>
+          </div>
+        </div>
+
+        <div class="cov-card" data-name="HappyBar Plus GothBox 12000" data-brand="HappyBar" data-price="Ksh 2,500" data-specs="12,000 puffs|5% Nic|Rechargeable" data-flavours='["Black Mamba","Grape Ice","Blue Razz Ice","Blackberry Ice","Strawberry Blueberry","Cool Mint","Guanabana Ice","Purple Rain","Tropical Fruits"]'>
+          <img src="assets/images/products/happybar-gothbox.jpg" alt="HappyBar GothBox 12000" class="cov-img" onerror="this.style.display='none'" />
+          <div class="cov-img-fallback" style="--c1:#3b0a6e;--c2:#a78bfa"></div>
+          <div class="cov-overlay">
+            <span class="cov-brand">HappyBar</span>
+            <h3 class="cov-name">Plus GothBox 12000</h3>
+            <div class="cov-specs"><span>12,000 puffs</span><span>5% Nic</span><span>Rechargeable</span></div>
+            <div class="cov-foot"><span class="cov-price">Ksh 2,500</span><button class="cov-order-btn" data-open-modal>Choose Flavour</button></div>
+          </div>
+        </div>
+
+        <div class="cov-card" data-name="Vapengin Jupiter2 Plus 13000 Kit" data-brand="Vapengin" data-price="Ksh 3,200" data-specs="13,000 puffs|5% Nic|Starter Kit" data-flavours='["Peach Mango Ice","Strawberry Peach Guava","Tropical","Strawberry Watermelon","Strawberry Kiwi Ice","Strawberry Lychee Ice","Pomegranate Berry Mint","Peppermint","Black Mamba","Watermelon Bubblegum Mint"]'>
+          <img src="assets/images/products/vapengin-jupiter2-plus-kit.jpg" alt="Vapengin Jupiter2 Plus" class="cov-img" onerror="this.style.display='none'" />
+          <div class="cov-img-fallback" style="--c1:#f59e0b;--c2:#a78bfa"></div>
+          <div class="cov-overlay">
+            <span class="cov-brand">Vapengin</span>
+            <h3 class="cov-name">Jupiter2 Plus 13000</h3>
+            <div class="cov-specs"><span>13,000 puffs</span><span>5% Nic</span><span>Kit</span></div>
+            <div class="cov-foot"><span class="cov-price">Ksh 3,200</span><button class="cov-order-btn" data-open-modal>Choose Flavour</button></div>
+          </div>
+        </div>
+
+        <div class="cov-card" data-name="VFEEL V1 7000" data-brand="VFEEL" data-price="Ksh 2,000" data-specs="7,000 puffs|2% Nic|Rechargeable" data-flavours='["Mango Dragon Fruit","Spearmint","White Peach","Guava Ice","Sour Mango Pineapple","Watermelon Ice","White Fizz","Strawberry Dragon Fruit","Sour Green Apple","Arctic Ice","Cool Mint","Double Mint","Strawberry Watermelon","Guava Dragon Fruit","Strawberry Kiwi","Pomegranate Ice","Kiwi Passion Fruit Guava","Lychee Peach Ice"]'>
+          <div class="cov-badge">Value</div>
+          <img src="assets/images/products/vfeel-v1.jpg" alt="VFEEL V1 7000" class="cov-img" onerror="this.style.display='none'" />
+          <div class="cov-img-fallback" style="--c1:#10b981;--c2:#a78bfa"></div>
+          <div class="cov-overlay">
+            <span class="cov-brand">VFEEL</span>
+            <h3 class="cov-name">V1 7000</h3>
+            <div class="cov-specs"><span>7,000 puffs</span><span>2% Nic</span><span>Rechargeable</span></div>
+            <div class="cov-foot"><span class="cov-price">Ksh 2,000</span><button class="cov-order-btn" data-open-modal>Choose Flavour</button></div>
+          </div>
+        </div>
+
+        <div class="cov-card" data-name="VishBar Daily Edition 7000" data-brand="VishBar" data-price="Ksh 1,500" data-specs="7,000 puffs|5% Nic" data-flavours='["Cool Mint","Banana Ice","Lychee Ice","Vanilla Custard Tobacco","Energy Drink Ice","Cantaloupe Ice","Watermelon Ice","Candy","Pineapple"]'>
+          <div class="cov-badge">Value</div>
+          <img src="assets/images/products/vishbar-daily.jpg" alt="VishBar Daily 7000" class="cov-img" onerror="this.style.display='none'" />
+          <div class="cov-img-fallback" style="--c1:#9333ea;--c2:#ec4899"></div>
+          <div class="cov-overlay">
+            <span class="cov-brand">VishBar</span>
+            <h3 class="cov-name">Daily Edition 7000</h3>
+            <div class="cov-specs"><span>7,000 puffs</span><span>5% Nic</span></div>
+            <div class="cov-foot"><span class="cov-price">Ksh 1,500</span><button class="cov-order-btn" data-open-modal>Choose Flavour</button></div>
+          </div>
+        </div>
+
+      </div><!-- /covStage -->
+
+      <button class="cov-btn cov-prev" id="covPrev" aria-label="Previous">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="cov-btn cov-next" id="covNext" aria-label="Next">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+      <div class="cov-dots" id="covDots"></div>
+    </div><!-- /covWrap -->
+  </section>
+
+  <!-- OUR VAPES -->
+  <section class="ourvapes-section" id="ourvapes">
+    <div class="container">
+      <div class="section-label">Full Range</div>
+      <h2 class="section-title">Our Vapes</h2>
+      <div class="vg-grid">
+
+        <div class="product-card" data-name="OxBar Tri-Fusion 45000" data-brand="OxBar" data-price="Ksh 3,500" data-specs="45,000 puffs|5% Nic|Rechargeable" data-flavours='["Double Mint","Peach Watermelon","Blueberry Raspberry","Grape Raspberry","Peach Berries","Cherry Lemonade","Passion Fruit Raspberry Grape","Watermelon Ice","Cherry Strawberry","Pineapple Mango Watermelon","Sakura Grape","Apple Mango Kiwi","Strawberry Grape","Strawberry Kiwi Watermelon"]'>
+          <div class="product-badge">Hot</div>
+          <div class="product-img"><img src="assets/images/products/oxbar-tri-fusion.jpg" alt="OxBar Tri-Fusion 45000" class="prod-img" onerror="this.style.display='none'" /><div class="prod-img-fallback" style="--c1:#a78bfa;--c2:#06b6d4"></div></div>
+          <div class="product-info"><div class="product-brand">OxBar</div><h4>Tri-Fusion 45000</h4><div class="product-meta"><span>45,000 puffs</span><span>5% Nic</span><span>Rechargeable</span></div><div class="product-footer"><span class="product-price">Ksh 3,500</span><button class="add-btn" data-open-modal>Choose Flavour</button></div></div>
+        </div>
+
+        <div class="product-card" data-name="OxBar G-Turbo 36000" data-brand="OxBar" data-price="Ksh 3,200" data-specs="36,000 puffs|5% Nic|Rechargeable" data-flavours='["Blueberry Raspberry","Sakura Grape","Apple Peach Ice","Jade Mint","Mango Pineapple"]'>
+          <div class="product-img"><img src="assets/images/products/oxbar-g-turbo.jpg" alt="OxBar G-Turbo 36000" class="prod-img" onerror="this.style.display='none'" /><div class="prod-img-fallback" style="--c1:#7c3aed;--c2:#a78bfa"></div></div>
+          <div class="product-info"><div class="product-brand">OxBar</div><h4>G-Turbo 36000</h4><div class="product-meta"><span>36,000 puffs</span><span>5% Nic</span><span>Rechargeable</span></div><div class="product-footer"><span class="product-price">Ksh 3,200</span><button class="add-btn" data-open-modal>Choose Flavour</button></div></div>
+        </div>
+
+        <div class="product-card" data-name="Lost Mary MT35000 Turbo" data-brand="Lost Mary" data-price="Ksh 2,800" data-specs="35,000 puffs|5% Nic|Rechargeable" data-flavours='["VCT","Cola Ice","Desert Oasis","Blueberry Ice","Watermelon Ice"]'>
+          <div class="product-badge">Popular</div>
+          <div class="product-img"><img src="assets/images/products/lostmary-mt35000.jpg" alt="Lost Mary MT35000" class="prod-img" onerror="this.style.display='none'" /><div class="prod-img-fallback" style="--c1:#10b981;--c2:#06b6d4"></div></div>
+          <div class="product-info"><div class="product-brand">Lost Mary</div><h4>MT35000 Turbo</h4><div class="product-meta"><span>35,000 puffs</span><span>5% Nic</span><span>Rechargeable</span></div><div class="product-footer"><span class="product-price">Ksh 2,800</span><button class="add-btn" data-open-modal>Choose Flavour</button></div></div>
+        </div>
+
+        <div class="product-card" data-name="OxBar SVOPP 35000 Kit" data-brand="OxBar" data-price="Ksh 3,500" data-specs="35,000 puffs|5% Nic|Starter Kit" data-flavours='["Peach Ice","Strawberry Watermelon Peach","Peach Mango Watermelon","Strawberry Watermelon"]'>
+          <div class="product-badge">Kit</div>
+          <div class="product-img"><img src="assets/images/products/oxbar-svopp-kit.jpg" alt="OxBar SVOPP Kit" class="prod-img" onerror="this.style.display='none'" /><div class="prod-img-fallback" style="--c1:#06b6d4;--c2:#a78bfa"></div></div>
+          <div class="product-info"><div class="product-brand">OxBar</div><h4>SVOPP 35000 — Kit</h4><div class="product-meta"><span>35,000 puffs</span><span>5% Nic</span><span>Starter Kit</span></div><div class="product-footer"><span class="product-price">Ksh 3,500</span><button class="add-btn" data-open-modal>Choose Flavour</button></div></div>
+        </div>
+
+        <div class="product-card" data-name="Vapengin Eros 20000 Kit" data-brand="Vapengin" data-price="Ksh 3,400" data-specs="20,000 puffs|5% Nic|Starter Kit" data-flavours='["Menthol Mint","Grape Ice","Watermelon Ice"]'>
+          <div class="product-img"><img src="assets/images/products/vapengin-eros-kit.jpg" alt="Vapengin Eros 20000" class="prod-img" onerror="this.style.display='none'" /><div class="prod-img-fallback" style="--c1:#f59e0b;--c2:#ef4444"></div></div>
+          <div class="product-info"><div class="product-brand">Vapengin</div><h4>Eros 20000 — Kit</h4><div class="product-meta"><span>20,000 puffs</span><span>5% Nic</span><span>Starter Kit</span></div><div class="product-footer"><span class="product-price">Ksh 3,400</span><button class="add-btn" data-open-modal>Choose Flavour</button></div></div>
+        </div>
+
+        <div class="product-card" data-name="TugBoat Super Pod Kit 16000" data-brand="TugBoat" data-price="Ksh 2,800" data-specs="16,000 puffs|5% Nic|Rechargeable" data-flavours='["Cream Soda","Caramel Popcorn"]'>
+          <div class="product-img"><img src="assets/images/products/tugboat-super-kit.jpg" alt="TugBoat Super Pod Kit" class="prod-img" onerror="this.style.display='none'" /><div class="prod-img-fallback" style="--c1:#0ea5e9;--c2:#06b6d4"></div></div>
+          <div class="product-info"><div class="product-brand">TugBoat</div><h4>Super Pod Kit 16000</h4><div class="product-meta"><span>16,000 puffs</span><span>5% Nic</span><span>Rechargeable</span></div><div class="product-footer"><span class="product-price">Ksh 2,800</span><button class="add-btn" data-open-modal>Choose Flavour</button></div></div>
+        </div>
+
+        <div class="product-card vg-extra" data-name="Vapengin Jupiter2 Plus 13000 Kit" data-brand="Vapengin" data-price="Ksh 3,200" data-specs="13,000 puffs|5% Nic|Starter Kit" data-flavours='["Peach Mango Ice","Strawberry Peach Guava","Tropical","Strawberry Watermelon","Strawberry Kiwi Ice","Strawberry Lychee Ice","Pomegranate Berry Mint","Peppermint","Black Mamba","Watermelon Bubblegum Mint"]'>
+          <div class="product-img"><img src="assets/images/products/vapengin-jupiter2-plus-kit.jpg" alt="Vapengin Jupiter2 Plus" class="prod-img" onerror="this.style.display='none'" /><div class="prod-img-fallback" style="--c1:#f59e0b;--c2:#a78bfa"></div></div>
+          <div class="product-info"><div class="product-brand">Vapengin</div><h4>Jupiter2 Plus 13000</h4><div class="product-meta"><span>13,000 puffs</span><span>5% Nic</span><span>Starter Kit</span></div><div class="product-footer"><span class="product-price">Ksh 3,200</span><button class="add-btn" data-open-modal>Choose Flavour</button></div></div>
+        </div>
+
+        <div class="product-card vg-extra" data-name="HappyBar Plus GothBox 12000" data-brand="HappyBar" data-price="Ksh 2,500" data-specs="12,000 puffs|5% Nic|Rechargeable" data-flavours='["Black Mamba","Grape Ice","Blue Razz Ice","Blackberry Ice","Strawberry Blueberry","Cool Mint","Guanabana Ice","Purple Rain","Tropical Fruits"]'>
+          <div class="product-img"><img src="assets/images/products/happybar-gothbox.jpg" alt="HappyBar GothBox 12000" class="prod-img" onerror="this.style.display='none'" /><div class="prod-img-fallback" style="--c1:#1f1f2e;--c2:#a78bfa"></div></div>
+          <div class="product-info"><div class="product-brand">HappyBar</div><h4>Plus GothBox 12000</h4><div class="product-meta"><span>12,000 puffs</span><span>5% Nic</span><span>Rechargeable</span></div><div class="product-footer"><span class="product-price">Ksh 2,500</span><button class="add-btn" data-open-modal>Choose Flavour</button></div></div>
+        </div>
+
+        <div class="product-card vg-extra" data-name="VFEEL V1 7000" data-brand="VFEEL" data-price="Ksh 2,000" data-specs="7,000 puffs|2% Nic|Rechargeable" data-flavours='["Mango Dragon Fruit","Spearmint","White Peach","Guava Ice","Sour Mango Pineapple","Watermelon Ice","White Fizz","Strawberry Dragon Fruit","Sour Green Apple","Arctic Ice","Cool Mint","Double Mint","Strawberry Watermelon","Guava Dragon Fruit","Strawberry Kiwi","Pomegranate Ice","Kiwi Passion Fruit Guava","Lychee Peach Ice"]'>
+          <div class="product-badge">Value</div>
+          <div class="product-img"><img src="assets/images/products/vfeel-v1.jpg" alt="VFEEL V1 7000" class="prod-img" onerror="this.style.display='none'" /><div class="prod-img-fallback" style="--c1:#10b981;--c2:#a78bfa"></div></div>
+          <div class="product-info"><div class="product-brand">VFEEL</div><h4>V1 7000</h4><div class="product-meta"><span>7,000 puffs</span><span>2% Nic</span><span>Rechargeable</span></div><div class="product-footer"><span class="product-price">Ksh 2,000</span><button class="add-btn" data-open-modal>Choose Flavour</button></div></div>
+        </div>
+
+        <div class="product-card vg-extra" data-name="VishBar Daily Edition 7000" data-brand="VishBar" data-price="Ksh 1,500" data-specs="7,000 puffs|5% Nic" data-flavours='["Cool Mint","Banana Ice","Lychee Ice","Vanilla Custard Tobacco","Energy Drink Ice","Cantaloupe Ice","Watermelon Ice","Candy","Pineapple"]'>
+          <div class="product-badge">Value</div>
+          <div class="product-img"><img src="assets/images/products/vishbar-daily.jpg" alt="VishBar Daily 7000" class="prod-img" onerror="this.style.display='none'" /><div class="prod-img-fallback" style="--c1:#9333ea;--c2:#ec4899"></div></div>
+          <div class="product-info"><div class="product-brand">VishBar</div><h4>Daily Edition 7000</h4><div class="product-meta"><span>7,000 puffs</span><span>5% Nic</span></div><div class="product-footer"><span class="product-price">Ksh 1,500</span><button class="add-btn" data-open-modal>Choose Flavour</button></div></div>
+        </div>
+
+      </div><!-- /vg-grid -->
+      <div class="vg-viewall">
+        <a href="disposables.html" class="btn btn-ghost">View All Vapes</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- UNUSED CAROUSEL PLACEHOLDER (carousel JS targets these IDs) -->
+  <div id="carousel" style="display:none"></div>
+  <div id="carouselDots" style="display:none"></div>
+  <button id="carouselPrev" style="display:none"></button>
+  <button id="carouselNext" style="display:none"></button>
+
+  <!-- OLD BESTSELLERS ANCHOR — KEPT FOR COMPATIBILITY -->
+  <div id="REMOVED_OLD_SECTION" style="display:none"></div>
+
+  <!-- POLICIES
+
+  FAKE_SPLIT_MARKER
+
+
+          <div class="product-card" data-name="OxBar Tri-Fusion 45000" data-brand="OxBar" data-price="Ksh 3,500" data-specs="45,000 puffs|5% Nic|Rechargeable" data-flavours='["Double Mint","Peach Watermelon","Blueberry Raspberry","Grape Raspberry","Peach Berries","Cherry Lemonade","Passion Fruit Raspberry Grape","Watermelon Ice","Cherry Strawberry","Pineapple Mango Watermelon","Sakura Grape","Apple Mango Kiwi","Strawberry Grape","Strawberry Kiwi Watermelon"]'>
+            <div class="product-badge">Hot</div>
             <div class="product-img">
-              <img src="assets/images/products/oxbar-tri-fusion.jpg" alt="OxBar Tri-Fusion" class="prod-img" onerror="this.style.display='none'" />
+              <img src="assets/images/products/oxbar-tri-fusion.jpg" alt="OxBar Tri-Fusion 45000" class="prod-img" onerror="this.style.display='none'" />
               <div class="prod-img-fallback" style="--c1:#a78bfa;--c2:#06b6d4"></div>
             </div>
             <div class="product-info">
               <div class="product-brand">OxBar</div>
               <h4>Tri-Fusion 45000</h4>
-              <div class="product-meta"><span>45,000 puffs</span><span>5%</span><span>Rechargeable</span></div>
+              <div class="product-meta"><span>45,000 puffs</span><span>5% Nic</span><span>Rechargeable</span></div>
               <div class="product-footer">
                 <span class="product-price">Ksh 3,500</span>
-                <a href="https://wa.link/9jaeyj" target="_blank" class="add-btn">Order</a>
+                <button class="add-btn" data-open-modal>Choose Flavour</button>
               </div>
             </div>
           </div>
 
-          <div class="product-card">
+          <div class="product-card" data-name="OxBar G-Turbo 36000" data-brand="OxBar" data-price="Ksh 3,200" data-specs="36,000 puffs|5% Nic|Rechargeable" data-flavours='["Blueberry Raspberry","Sakura Grape","Apple Peach Ice","Jade Mint","Mango Pineapple"]'>
+            <div class="product-img">
+              <img src="assets/images/products/oxbar-g-turbo.jpg" alt="OxBar G-Turbo 36000" class="prod-img" onerror="this.style.display='none'" />
+              <div class="prod-img-fallback" style="--c1:#7c3aed;--c2:#a78bfa"></div>
+            </div>
+            <div class="product-info">
+              <div class="product-brand">OxBar</div>
+              <h4>G-Turbo 36000</h4>
+              <div class="product-meta"><span>36,000 puffs</span><span>5% Nic</span><span>Rechargeable</span></div>
+              <div class="product-footer">
+                <span class="product-price">Ksh 3,200</span>
+                <button class="add-btn" data-open-modal>Choose Flavour</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-name="Lost Mary MT35000 Turbo" data-brand="Lost Mary" data-price="Ksh 2,800" data-specs="35,000 puffs|5% Nic|Rechargeable" data-flavours='["VCT","Cola Ice","Desert Oasis","Blueberry Ice","Watermelon Ice"]'>
             <div class="product-badge">Popular</div>
             <div class="product-img">
-              <img src="assets/images/products/lostmary-mt35000.jpg" alt="LostMary MT35000" class="prod-img" onerror="this.style.display='none'" />
+              <img src="assets/images/products/lostmary-mt35000.jpg" alt="Lost Mary MT35000 Turbo" class="prod-img" onerror="this.style.display='none'" />
               <div class="prod-img-fallback" style="--c1:#10b981;--c2:#06b6d4"></div>
             </div>
             <div class="product-info">
               <div class="product-brand">Lost Mary</div>
               <h4>MT35000 Turbo</h4>
-              <div class="product-meta"><span>35,000 puffs</span><span>5%</span><span>Rechargeable</span></div>
+              <div class="product-meta"><span>35,000 puffs</span><span>5% Nic</span><span>Rechargeable</span></div>
               <div class="product-footer">
                 <span class="product-price">Ksh 2,800</span>
-                <a href="https://wa.link/9jaeyj" target="_blank" class="add-btn">Order</a>
+                <button class="add-btn" data-open-modal>Choose Flavour</button>
               </div>
             </div>
           </div>
 
-          <div class="product-card">
+          <div class="product-card" data-name="OxBar SVOPP 35000 Kit" data-brand="OxBar" data-price="Ksh 3,500" data-specs="35,000 puffs|5% Nic|Starter Kit" data-flavours='["Peach Ice","Strawberry Watermelon Peach","Peach Mango Watermelon","Strawberry Watermelon"]'>
+            <div class="product-badge">Kit</div>
             <div class="product-img">
-              <img src="assets/images/products/vapengin-jupiter2-plus-kit.jpg" alt="VapenginJupiter2 Plus" class="prod-img" onerror="this.style.display='none'" />
+              <img src="assets/images/products/oxbar-svopp-kit.jpg" alt="OxBar SVOPP Kit" class="prod-img" onerror="this.style.display='none'" />
+              <div class="prod-img-fallback" style="--c1:#06b6d4;--c2:#a78bfa"></div>
+            </div>
+            <div class="product-info">
+              <div class="product-brand">OxBar</div>
+              <h4>SVOPP 35000 — Kit</h4>
+              <div class="product-meta"><span>35,000 puffs</span><span>5% Nic</span><span>Starter Kit</span></div>
+              <div class="product-footer">
+                <span class="product-price">Ksh 3,500</span>
+                <button class="add-btn" data-open-modal>Choose Flavour</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-name="Vapengin Eros 20000 Kit" data-brand="Vapengin" data-price="Ksh 3,400" data-specs="20,000 puffs|5% Nic|Starter Kit" data-flavours='["Menthol Mint","Grape Ice","Watermelon Ice"]'>
+            <div class="product-img">
+              <img src="assets/images/products/vapengin-eros-kit.jpg" alt="Vapengin Eros 20000 Kit" class="prod-img" onerror="this.style.display='none'" />
               <div class="prod-img-fallback" style="--c1:#f59e0b;--c2:#ef4444"></div>
             </div>
             <div class="product-info">
               <div class="product-brand">Vapengin</div>
-              <h4>Jupiter2 Plus 13000</h4>
-              <div class="product-meta"><span>13,000 puffs</span><span>5%</span><span>Kit</span></div>
+              <h4>Eros 20000 — Kit</h4>
+              <div class="product-meta"><span>20,000 puffs</span><span>5% Nic</span><span>Starter Kit</span></div>
               <div class="product-footer">
-                <span class="product-price">Ksh 3,200</span>
-                <a href="https://wa.link/9jaeyj" target="_blank" class="add-btn">Order</a>
+                <span class="product-price">Ksh 3,400</span>
+                <button class="add-btn" data-open-modal>Choose Flavour</button>
               </div>
             </div>
           </div>
 
-          <div class="product-card">
+          <div class="product-card" data-name="TugBoat Super Pod Kit 16000" data-brand="TugBoat" data-price="Ksh 2,800" data-specs="16,000 puffs|5% Nic|Rechargeable" data-flavours='["Cream Soda","Caramel Popcorn"]'>
+            <div class="product-img">
+              <img src="assets/images/products/tugboat-super-kit.jpg" alt="TugBoat Super Pod Kit" class="prod-img" onerror="this.style.display='none'" />
+              <div class="prod-img-fallback" style="--c1:#0ea5e9;--c2:#06b6d4"></div>
+            </div>
+            <div class="product-info">
+              <div class="product-brand">TugBoat</div>
+              <h4>Super Pod Kit 16000</h4>
+              <div class="product-meta"><span>16,000 puffs</span><span>5% Nic</span><span>Rechargeable</span></div>
+              <div class="product-footer">
+                <span class="product-price">Ksh 2,800</span>
+                <button class="add-btn" data-open-modal>Choose Flavour</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-name="Vapengin Jupiter2 Plus 13000 Kit" data-brand="Vapengin" data-price="Ksh 3,200" data-specs="13,000 puffs|5% Nic|Starter Kit" data-flavours='["Peach Mango Ice","Strawberry Peach Guava","Tropical","Strawberry Watermelon","Strawberry Kiwi Ice","Strawberry Lychee Ice","Pomegranate Berry Mint","Peppermint","Black Mamba","Watermelon Bubblegum Mint"]'>
+            <div class="product-img">
+              <img src="assets/images/products/vapengin-jupiter2-plus-kit.jpg" alt="Vapengin Jupiter2 Plus Kit" class="prod-img" onerror="this.style.display='none'" />
+              <div class="prod-img-fallback" style="--c1:#f59e0b;--c2:#a78bfa"></div>
+            </div>
+            <div class="product-info">
+              <div class="product-brand">Vapengin</div>
+              <h4>Jupiter2 Plus 13000</h4>
+              <div class="product-meta"><span>13,000 puffs</span><span>5% Nic</span><span>Starter Kit</span></div>
+              <div class="product-footer">
+                <span class="product-price">Ksh 3,200</span>
+                <button class="add-btn" data-open-modal>Choose Flavour</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-name="HappyBar Plus GothBox 12000" data-brand="HappyBar" data-price="Ksh 2,500" data-specs="12,000 puffs|5% Nic|Rechargeable" data-flavours='["Black Mamba","Grape Ice","Blue Razz Ice","Blackberry Ice","Strawberry Blueberry","Cool Mint","Guanabana Ice","Purple Rain","Tropical Fruits"]'>
+            <div class="product-img">
+              <img src="assets/images/products/happybar-gothbox.jpg" alt="HappyBar GothBox 12000" class="prod-img" onerror="this.style.display='none'" />
+              <div class="prod-img-fallback" style="--c1:#1f1f2e;--c2:#a78bfa"></div>
+            </div>
+            <div class="product-info">
+              <div class="product-brand">HappyBar</div>
+              <h4>Plus GothBox 12000</h4>
+              <div class="product-meta"><span>12,000 puffs</span><span>5% Nic</span><span>Rechargeable</span></div>
+              <div class="product-footer">
+                <span class="product-price">Ksh 2,500</span>
+                <button class="add-btn" data-open-modal>Choose Flavour</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-name="VFEEL V1 7000" data-brand="VFEEL" data-price="Ksh 2,000" data-specs="7,000 puffs|2% Nic|Rechargeable" data-flavours='["Mango Dragon Fruit","Spearmint","White Peach","Guava Ice","Sour Mango Pineapple","Watermelon Ice","White Fizz","Strawberry Dragon Fruit","Sour Green Apple","Arctic Ice","Cool Mint","Double Mint","Strawberry Watermelon","Guava Dragon Fruit","Strawberry Kiwi","Pomegranate Ice","Kiwi Passion Fruit Guava","Lychee Peach Ice"]'>
             <div class="product-badge">Value</div>
             <div class="product-img">
-              <img src="assets/images/products/vishbar-daily.jpg" alt="VishBar Daily" class="prod-img" onerror="this.style.display='none'" />
+              <img src="assets/images/products/vfeel-v1.jpg" alt="VFEEL V1 7000" class="prod-img" onerror="this.style.display='none'" />
+              <div class="prod-img-fallback" style="--c1:#10b981;--c2:#a78bfa"></div>
+            </div>
+            <div class="product-info">
+              <div class="product-brand">VFEEL</div>
+              <h4>V1 7000</h4>
+              <div class="product-meta"><span>7,000 puffs</span><span>2% Nic</span><span>Rechargeable</span></div>
+              <div class="product-footer">
+                <span class="product-price">Ksh 2,000</span>
+                <button class="add-btn" data-open-modal>Choose Flavour</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-name="VishBar Daily Edition 7000" data-brand="VishBar" data-price="Ksh 1,500" data-specs="7,000 puffs|5% Nic" data-flavours='["Cool Mint","Banana Ice","Lychee Ice","Vanilla Custard Tobacco","Energy Drink Ice","Cantaloupe Ice","Watermelon Ice","Candy","Pineapple"]'>
+            <div class="product-badge">Value</div>
+            <div class="product-img">
+              <img src="assets/images/products/vishbar-daily.jpg" alt="VishBar Daily Edition 7000" class="prod-img" onerror="this.style.display='none'" />
               <div class="prod-img-fallback" style="--c1:#9333ea;--c2:#ec4899"></div>
             </div>
             <div class="product-info">
               <div class="product-brand">VishBar</div>
               <h4>Daily Edition 7000</h4>
-              <div class="product-meta"><span>7,000 puffs</span><span>5%</span></div>
+              <div class="product-meta"><span>7,000 puffs</span><span>5% Nic</span></div>
               <div class="product-footer">
                 <span class="product-price">Ksh 1,500</span>
-                <a href="https://wa.link/9jaeyj" target="_blank" class="add-btn">Order</a>
+                <button class="add-btn" data-open-modal>Choose Flavour</button>
               </div>
             </div>
           </div>
@@ -227,58 +509,174 @@
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
-  <section class="testimonials cosmic-bg" id="testimonials">
+  <!-- POLICIES -->
+  <section class="policies-section" id="policies">
     <div class="container">
-      <div class="section-label">Reviews</div>
-      <h2 class="section-title">What They Say</h2>
-      <div class="testimonials-slider">
-        <div class="testimonial-track" id="testimonialTrack">
-          <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p>"Absolutely unreal service. Ordered at 1pm, arrived next morning. The Blue Razz Ice is my go-to — nothing else comes close."</p>
-            <div class="testimonial-author">
-              <div class="author-avatar">JM</div>
-              <div><strong>Jamie M.</strong><span>Verified Buyer</span></div>
-            </div>
+      <div class="section-label">How We Operate</div>
+      <h2 class="section-title">Policies &amp; Information</h2>
+      <div class="policies-grid">
+
+        <div class="policy-card">
+          <div class="policy-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
           </div>
-          <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p>"Best vape shop online, no question. Authentic products, insane flavour range and clean discreet packaging. Will never go anywhere else."</p>
-            <div class="testimonial-author">
-              <div class="author-avatar">SK</div>
-              <div><strong>Sophie K.</strong><span>Verified Buyer</span></div>
-            </div>
-          </div>
-          <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p>"Customer service is actually amazing. Had an issue with an order, sorted within an hour. Highly recommend."</p>
-            <div class="testimonial-author">
-              <div class="author-avatar">EL</div>
-              <div><strong>Emma L.</strong><span>Verified Buyer</span></div>
-            </div>
-          </div>
+          <h3>Age Restriction — 18+</h3>
+          <p>You must be 18 or over to purchase from iVapeKenya. We operate a strict Challenge 25 policy. Valid identification is required upon delivery without exception.</p>
         </div>
-        <div class="testimonial-nav">
-          <button class="t-btn" id="tPrev">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
-          </button>
-          <div class="t-dots" id="tDots"></div>
-          <button class="t-btn" id="tNext">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-          </button>
+
+        <div class="policy-card">
+          <div class="policy-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <h3>Authentic Products</h3>
+          <p>Every product we stock is 100% authentic, sourced directly from verified distributors. We do not stock counterfeit or grey-market goods under any circumstances.</p>
         </div>
+
+        <div class="policy-card">
+          <div class="policy-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="3" width="15" height="13" rx="1"/>
+              <path d="M16 8h4l3 5v3h-7V8z"/>
+              <circle cx="5.5" cy="18.5" r="2.5"/>
+              <circle cx="18.5" cy="18.5" r="2.5"/>
+            </svg>
+          </div>
+          <h3>Nairobi Delivery</h3>
+          <p>We deliver across Nairobi and surrounding areas. Same-day delivery is available for orders placed before noon. Contact us via WhatsApp to confirm delivery to your location.</p>
+        </div>
+
+        <div class="policy-card">
+          <div class="policy-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="1 4 1 10 7 10"/>
+              <path d="M3.51 15a9 9 0 102.13-9.36L1 10"/>
+            </svg>
+          </div>
+          <h3>Returns &amp; Faults</h3>
+          <p>Any faulty or damaged products must be reported within 24 hours of delivery. We will arrange a replacement or a full refund at no additional cost to you.</p>
+        </div>
+
       </div>
     </div>
   </section>
 
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-label">Reviews</div>
+      <div class="testimonials-header">
+        <h2 class="section-title" style="margin-bottom:0">What They Say</h2>
+        <div class="tslider-controls">
+          <button class="tslider-btn" id="tPrev" aria-label="Previous">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="tslider-btn" id="tNext" aria-label="Next">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="tslider-viewport">
+        <div class="tslider-track" id="testimonialTrack">
+
+          <div class="tslider-card">
+            <div class="tcard-quote-icon">
+              <svg width="36" height="36" viewBox="0 0 32 32" fill="currentColor"><path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"/></svg>
+            </div>
+            <p>"Absolutely unreal service. Ordered at 1pm and it arrived the same evening. The Blue Razz Ice is my go-to — nothing else comes close."</p>
+            <div class="tcard-divider"></div>
+            <div class="tcard-author">
+              <div class="tcard-avatar" style="--av1:#a78bfa;--av2:#06b6d4">JM</div>
+              <div class="tcard-meta">
+                <strong>Jamie M.</strong>
+                <span>Verified Buyer · Nairobi</span>
+              </div>
+              <div class="tcard-stars">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="tslider-card">
+            <div class="tcard-quote-icon">
+              <svg width="36" height="36" viewBox="0 0 32 32" fill="currentColor"><path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"/></svg>
+            </div>
+            <p>"Best vape shop in Nairobi, no question. Authentic products, wide flavour range and clean discreet packaging. Will never go anywhere else."</p>
+            <div class="tcard-divider"></div>
+            <div class="tcard-author">
+              <div class="tcard-avatar" style="--av1:#10b981;--av2:#06b6d4">SK</div>
+              <div class="tcard-meta">
+                <strong>Sophie K.</strong>
+                <span>Verified Buyer · Westlands</span>
+              </div>
+              <div class="tcard-stars">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="tslider-card">
+            <div class="tcard-quote-icon">
+              <svg width="36" height="36" viewBox="0 0 32 32" fill="currentColor"><path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"/></svg>
+            </div>
+            <p>"Customer service is genuinely exceptional. Had a question about an order and it was resolved within the hour. Highly recommend to anyone."</p>
+            <div class="tcard-divider"></div>
+            <div class="tcard-author">
+              <div class="tcard-avatar" style="--av1:#f59e0b;--av2:#ef4444">EL</div>
+              <div class="tcard-meta">
+                <strong>Emma L.</strong>
+                <span>Verified Buyer · Karen</span>
+              </div>
+              <div class="tcard-stars">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="tslider-card">
+            <div class="tcard-quote-icon">
+              <svg width="36" height="36" viewBox="0 0 32 32" fill="currentColor"><path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"/></svg>
+            </div>
+            <p>"Impressed by the professionalism throughout. Fast delivery right to my door in Kilimani. These guys clearly know their products inside out."</p>
+            <div class="tcard-divider"></div>
+            <div class="tcard-author">
+              <div class="tcard-avatar" style="--av1:#9333ea;--av2:#ec4899">MT</div>
+              <div class="tcard-meta">
+                <strong>Marcus T.</strong>
+                <span>Verified Buyer · Kilimani</span>
+              </div>
+              <div class="tcard-stars">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="tslider-card">
+            <div class="tcard-quote-icon">
+              <svg width="36" height="36" viewBox="0 0 32 32" fill="currentColor"><path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"/></svg>
+            </div>
+            <p>"The flavour selection is incredible. Three different brands tried, all exactly as described and 100% authentic. My new go-to for everything vape."</p>
+            <div class="tcard-divider"></div>
+            <div class="tcard-author">
+              <div class="tcard-avatar" style="--av1:#06b6d4;--av2:#10b981">AN</div>
+              <div class="tcard-meta">
+                <strong>Aisha N.</strong>
+                <span>Verified Buyer · Lavington</span>
+              </div>
+              <div class="tcard-stars">★★★★★</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="tslider-dots" id="tDots"></div>
+    </div>
+  </section>
+
   <!-- CTA -->
-  <section class="cta-section cosmic-bg">
+  <section class="cta-section">
     <div class="cta-bg"></div>
     <div class="container cta-inner">
       <div class="section-label light">Limited Time</div>
       <h2 class="cta-title">Find Your Perfect Vape Today</h2>
-      <p class="cta-sub">Free shipping on orders over £20 · Authentic products · Same-day dispatch</p>
+      <p class="cta-sub">Nairobi delivery · 100% authentic products · Order via WhatsApp</p>
       <div class="cta-buttons">
         <a href="#bestsellers" class="btn btn-primary">Shop Now</a>
         <a href="#contact" class="btn btn-ghost">Get in Touch</a>
@@ -294,7 +692,7 @@
           <div class="footer-logo">
             <img src="assets/images/logo.png" alt="iVapeKenya" class="footer-logo-img" />
           </div>
-          <p>The UK's premium vape destination.</p>
+          <p>Nairobi's premium vape destination.</p>
           <div class="social-links">
             <a href="#" aria-label="Instagram" class="social-link">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
@@ -312,21 +710,17 @@
           <ul class="contact-list">
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>123 High Street, London, UK</span>
+              <span>Nairobi, Kenya</span>
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-              <span>020 1234 5678</span>
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <span>hello@vltx.co.uk</span>
+              <span>WhatsApp: wa.link/9jaeyj</span>
             </li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 IVAPEKENYA. All rights reserved. · 18+ only. Challenge 25 applies.</p>
+        <p>© 2026 iVapeKenya. All rights reserved. · 18+ only. Challenge 25 applies. · Nairobi, Kenya</p>
         <div class="footer-legal">
           <a href="#">Privacy</a>
           <a href="#">Terms</a>
@@ -346,6 +740,26 @@
       <div class="age-buttons">
         <button class="btn btn-primary" id="ageYes">I am 18 or over</button>
         <button class="btn btn-ghost" id="ageNo">I am under 18</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLAVOUR MODAL -->
+  <div class="flavour-modal" id="flavourModal" role="dialog" aria-modal="true">
+    <div class="fm-backdrop" id="fmBackdrop"></div>
+    <div class="fm-box">
+      <button class="fm-close" id="fmClose" aria-label="Close">✕</button>
+      <div class="fm-brand" id="fmBrand"></div>
+      <h3 class="fm-name" id="fmName"></h3>
+      <div class="fm-meta" id="fmMeta"></div>
+      <p class="fm-prompt">Choose your flavour</p>
+      <div class="fm-chips" id="fmChips"></div>
+      <div class="fm-footer">
+        <span class="fm-price" id="fmPrice"></span>
+        <a class="fm-order-btn" id="fmOrderBtn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Order on WhatsApp
+        </a>
       </div>
     </div>
   </div>
