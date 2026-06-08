@@ -985,16 +985,7 @@ section {
   background: radial-gradient(ellipse 80% 60% at 50% 50%, #2e0060 0%, #130028 45%, #000 100%);
 }
 
-.cta-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 35% 70% at 5% 50%, rgba(124,58,237,0.18) 0%, transparent 100%),
-    radial-gradient(ellipse 35% 70% at 95% 50%, rgba(124,58,237,0.18) 0%, transparent 100%);
-  pointer-events: none;
-  z-index: 0;
-}
+/* glow removed */
 
 .cta-bg {
   display: none;
@@ -1269,14 +1260,29 @@ section {
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .footer-bottom { flex-direction: column; text-align: center; gap: 10px; }
 
-  .testimonial-card { padding: 28px 20px; }
-  .testimonial-card p { font-size: 0.9rem; }
-
   .cta-title { font-size: 2rem; }
   .section-title { margin-bottom: 36px; }
-  .product-card { flex: 0 0 240px; }
+  .product-card { flex: 0 0 200px; }
 
-  section { padding: 60px 0 !important; }
+  section { padding: 52px 0 !important; }
+
+  /* ── Hero → Categories: remove black gap ── */
+  .categories-section { padding-bottom: 40px !important; }
+  .categories-section::before { height: 0 !important; }
+
+  /* ── Bestsellers: compact on mobile ── */
+  .bestsellers { padding: 40px 0 0 !important; }
+  .cov-wrap { padding: 16px 0 40px !important; }
+
+  /* ── Testimonials: fix overflow + smaller text ── */
+  .testimonials { overflow: hidden; }
+  .tslider-viewport { overflow: hidden; max-width: 100%; }
+  .tslider-card { padding: 20px 18px !important; }
+  .tslider-card p { font-size: 0.78rem !important; line-height: 1.7 !important; }
+  .tcard-stars { font-size: 0.65rem !important; }
+  .tcard-meta strong { font-size: 0.75rem !important; }
+  .tcard-meta span { font-size: 0.62rem !important; }
+  .testimonials-header { margin-bottom: 24px; }
 }
 
 @media (max-width: 480px) {
@@ -1284,6 +1290,16 @@ section {
   .nav-inner { padding: 0 16px; }
   .cta-buttons { flex-direction: column; align-items: center; }
   .btn { width: 100%; max-width: 280px; }
+  /* Further tighten coverflow on very small screens */
+  .cov-btn.cov-prev { left: 8px; }
+  .cov-btn.cov-next { right: 8px; }
+}
+
+/* ── Footer credits ── */
+.footer-credits {
+  font-size: 0.72rem;
+  color: var(--grey2);
+  margin-top: 4px;
 }
 
 /* ═══════════════════════════════════════════

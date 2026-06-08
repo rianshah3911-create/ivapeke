@@ -5,7 +5,7 @@
   'use strict';
 
   /* ── WhatsApp number — update this with your real number (no + or spaces) ── */
-  const WA_NUMBER = '254700000000';
+  const WA_NUMBER = '254768208025';
 
   const IS_DESKTOP = window.innerWidth >= 1025;
 
