@@ -18,7 +18,7 @@
         <img src="assets/images/logo.png" alt="iVapeKenya" class="nav-logo-img" />
       </a>
       <ul class="nav-links">
-        <li><a href="#bestsellers">Shop</a></li>
+        <li><a href="#categories">Shop</a></li>
         <li><a href="#testimonials">Reviews</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -64,40 +64,76 @@
     </div>
   </section>
 
-  <!-- FEATURES -->
-  <section class="features cosmic-bg" id="features">
+  <!-- CATEGORIES -->
+  <section class="categories-section" id="categories">
+
+    <!-- Infinite marquee strip -->
+    <div class="marquee-wrap">
+      <div class="marquee-track">
+        <span>DISPOSABLE VAPES</span><span class="mdot">•</span>
+        <span>VAPE KITS</span><span class="mdot">•</span>
+        <span>E-LIQUIDS</span><span class="mdot">•</span>
+        <span>ACCESSORIES</span><span class="mdot">•</span>
+        <span>DISPOSABLE VAPES</span><span class="mdot">•</span>
+        <span>VAPE KITS</span><span class="mdot">•</span>
+        <span>E-LIQUIDS</span><span class="mdot">•</span>
+        <span>ACCESSORIES</span><span class="mdot">•</span>
+        <span>DISPOSABLE VAPES</span><span class="mdot">•</span>
+        <span>VAPE KITS</span><span class="mdot">•</span>
+        <span>E-LIQUIDS</span><span class="mdot">•</span>
+        <span>ACCESSORIES</span><span class="mdot">•</span>
+      </div>
+    </div>
+
+    <!-- Category cards -->
     <div class="container">
-      <div class="section-label">Why IVAPEKENYA</div>
-      <h2 class="section-title">Built Different</h2>
-      <div class="features-grid">
-        <div class="feature-card" data-delay="0">
-          <div class="feature-icon">
-            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="url(#g1)" stroke-width="1.5"/><path d="M16 24l5 5 11-11" stroke="url(#g1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="g1" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse"><stop stop-color="#a78bfa"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs></svg>
+      <div class="cat-grid">
+
+        <a class="cat-card" href="disposables.html">
+          <div class="cat-img-wrap">
+            <img src="assets/images/categories/disposables.jpg" alt="Disposable Vapes" class="cat-img" onerror="this.style.display='none'" />
+            <div class="cat-fallback-bg" style="--c1:#a78bfa;--c2:#06b6d4"></div>
           </div>
-          <h3>100% Authentic</h3>
-          <p>Every product verified genuine. Direct from authorised distributors — no counterfeits, ever.</p>
-        </div>
-        <div class="feature-card" data-delay="100">
-          <div class="feature-icon">
-            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="url(#g2)" stroke-width="1.5"/><path d="M24 14v10l6 4" stroke="url(#g2)" stroke-width="2" stroke-linecap="round"/><defs><linearGradient id="g2" x1="4" y1="4" x2="44" y2="44"><stop stop-color="#a78bfa"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs></svg>
+          <div class="cat-info">
+            <span class="cat-label">Shop</span>
+            <h3>Disposable Vapes</h3>
+            <span class="cat-arrow">→</span>
           </div>
-          <h3>Same-Day Dispatch</h3>
-          <p>Order before 3pm and your vape ships today. Fast, discreet packaging on every order.</p>
-        </div>
-        <div class="feature-card" data-delay="200">
-          <div class="feature-icon">
-            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="url(#g3)" stroke-width="1.5"/><path d="M14 26c0-5.5 4.5-10 10-10s10 4.5 10 10" stroke="url(#g3)" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="30" r="3" stroke="url(#g3)" stroke-width="1.5"/><defs><linearGradient id="g3" x1="4" y1="4" x2="44" y2="44"><stop stop-color="#a78bfa"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs></svg>
+        </a>
+
+        <a class="cat-card cat-soon" href="#">
+          <div class="cat-img-wrap">
+            <div class="cat-fallback-bg" style="--c1:#f59e0b;--c2:#ef4444"></div>
           </div>
-          <h3>Premium Flavours</h3>
-          <p>500+ flavours across top brands. Ice-cold menthols to rich dessert blends.</p>
-        </div>
-        <div class="feature-card" data-delay="300">
-          <div class="feature-icon">
-            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="url(#g4)" stroke-width="1.5"/><path d="M20 16h8l2 6H18l2-6z" stroke="url(#g4)" stroke-width="1.5"/><rect x="16" y="22" width="16" height="10" rx="2" stroke="url(#g4)" stroke-width="1.5"/><defs><linearGradient id="g4" x1="4" y1="4" x2="44" y2="44"><stop stop-color="#a78bfa"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs></svg>
+          <div class="cat-info">
+            <span class="cat-label">Coming Soon</span>
+            <h3>Vape Kits</h3>
+            <span class="cat-arrow">→</span>
           </div>
-          <h3>Trusted Brands</h3>
-          <p>Elf Bar, Lost Mary, Geek Bar, Voopoo, Smok and 30+ more premium brands in stock.</p>
-        </div>
+        </a>
+
+        <a class="cat-card cat-soon" href="#">
+          <div class="cat-img-wrap">
+            <div class="cat-fallback-bg" style="--c1:#10b981;--c2:#06b6d4"></div>
+          </div>
+          <div class="cat-info">
+            <span class="cat-label">Coming Soon</span>
+            <h3>E-Liquids</h3>
+            <span class="cat-arrow">→</span>
+          </div>
+        </a>
+
+        <a class="cat-card cat-soon" href="#">
+          <div class="cat-img-wrap">
+            <div class="cat-fallback-bg" style="--c1:#9333ea;--c2:#ec4899"></div>
+          </div>
+          <div class="cat-info">
+            <span class="cat-label">Coming Soon</span>
+            <h3>Accessories</h3>
+            <span class="cat-arrow">→</span>
+          </div>
+        </a>
+
       </div>
     </div>
   </section>
@@ -109,56 +145,74 @@
       <h2 class="section-title">Best Sellers</h2>
       <div class="carousel-wrap">
         <div class="carousel" id="carousel">
+
           <div class="product-card">
-            <div class="product-badge">Best Seller</div>
+            <div class="product-badge">🔥 Hot</div>
             <div class="product-img">
-              <div class="product-placeholder" style="--c1:#a78bfa;--c2:#06b6d4">
-                <svg viewBox="0 0 60 120" fill="none"><rect x="10" y="5" width="40" height="110" rx="10" stroke="url(#p1)" stroke-width="1.2"/><circle cx="30" cy="25" r="7" stroke="url(#p1)" stroke-width="1"/><rect x="18" y="85" width="24" height="3" rx="1.5" fill="url(#p1)" opacity=".4"/><defs><linearGradient id="p1" x1="10" y1="5" x2="50" y2="115"><stop stop-color="#a78bfa"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs></svg>
-              </div>
+              <img src="assets/images/products/oxbar-tri-fusion.jpg" alt="OxBar Tri-Fusion" class="prod-img" onerror="this.style.display='none'" />
+              <div class="prod-img-fallback" style="--c1:#a78bfa;--c2:#06b6d4"></div>
             </div>
             <div class="product-info">
-              <div class="product-brand">Elf Bar</div>
-              <h4>BC5000 — Blue Razz Ice</h4>
-              <div class="product-meta"><span>5000 puffs</span><span>20mg</span></div>
+              <div class="product-brand">OxBar</div>
+              <h4>Tri-Fusion 45000</h4>
+              <div class="product-meta"><span>45,000 puffs</span><span>5%</span><span>Rechargeable</span></div>
               <div class="product-footer">
-                <span class="product-price">£9.99</span>
-                <a href="#contact" class="add-btn">Enquire</a>
+                <span class="product-price">Ksh 3,500</span>
+                <a href="https://wa.link/9jaeyj" target="_blank" class="add-btn">Order</a>
               </div>
             </div>
           </div>
+
           <div class="product-card">
-            <div class="product-badge sale">Sale</div>
+            <div class="product-badge">Popular</div>
             <div class="product-img">
-              <div class="product-placeholder" style="--c1:#f59e0b;--c2:#ef4444">
-                <svg viewBox="0 0 60 120" fill="none"><rect x="10" y="5" width="40" height="110" rx="10" stroke="url(#p2)" stroke-width="1.2"/><rect x="18" y="15" width="24" height="40" rx="4" stroke="url(#p2)" stroke-width="1" opacity=".5"/><circle cx="30" cy="95" r="6" stroke="url(#p2)" stroke-width="1"/><defs><linearGradient id="p2" x1="10" y1="5" x2="50" y2="115"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs></svg>
-              </div>
+              <img src="assets/images/products/lostmary-mt35000.jpg" alt="LostMary MT35000" class="prod-img" onerror="this.style.display='none'" />
+              <div class="prod-img-fallback" style="--c1:#10b981;--c2:#06b6d4"></div>
             </div>
             <div class="product-info">
               <div class="product-brand">Lost Mary</div>
-              <h4>BM600 — Watermelon Ice</h4>
-              <div class="product-meta"><span>600 puffs</span><span>20mg</span></div>
+              <h4>MT35000 Turbo</h4>
+              <div class="product-meta"><span>35,000 puffs</span><span>5%</span><span>Rechargeable</span></div>
               <div class="product-footer">
-                <span class="product-price">£4.99 <s>£6.99</s></span>
-                <a href="#contact" class="add-btn">Enquire</a>
+                <span class="product-price">Ksh 2,800</span>
+                <a href="https://wa.link/9jaeyj" target="_blank" class="add-btn">Order</a>
               </div>
             </div>
           </div>
+
           <div class="product-card">
             <div class="product-img">
-              <div class="product-placeholder" style="--c1:#10b981;--c2:#06b6d4">
-                <svg viewBox="0 0 60 120" fill="none"><rect x="10" y="5" width="40" height="110" rx="10" stroke="url(#p3)" stroke-width="1.2"/><path d="M20 40 Q30 25 40 40 L42 90 Q42 108 30 108 Q18 108 18 90 Z" stroke="url(#p3)" stroke-width="1" opacity=".5"/><defs><linearGradient id="p3" x1="10" y1="5" x2="50" y2="115"><stop stop-color="#10b981"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs></svg>
-              </div>
+              <img src="assets/images/products/vapengin-jupiter2-plus-kit.jpg" alt="VapenginJupiter2 Plus" class="prod-img" onerror="this.style.display='none'" />
+              <div class="prod-img-fallback" style="--c1:#f59e0b;--c2:#ef4444"></div>
             </div>
             <div class="product-info">
-              <div class="product-brand">Geek Bar</div>
-              <h4>Pulse 15000 — Tropical Mix</h4>
-              <div class="product-meta"><span>15000 puffs</span><span>20mg</span></div>
+              <div class="product-brand">Vapengin</div>
+              <h4>Jupiter2 Plus 13000</h4>
+              <div class="product-meta"><span>13,000 puffs</span><span>5%</span><span>Kit</span></div>
               <div class="product-footer">
-                <span class="product-price">£14.99</span>
-                <a href="#contact" class="add-btn">Enquire</a>
+                <span class="product-price">Ksh 3,200</span>
+                <a href="https://wa.link/9jaeyj" target="_blank" class="add-btn">Order</a>
               </div>
             </div>
           </div>
+
+          <div class="product-card">
+            <div class="product-badge">Value</div>
+            <div class="product-img">
+              <img src="assets/images/products/vishbar-daily.jpg" alt="VishBar Daily" class="prod-img" onerror="this.style.display='none'" />
+              <div class="prod-img-fallback" style="--c1:#9333ea;--c2:#ec4899"></div>
+            </div>
+            <div class="product-info">
+              <div class="product-brand">VishBar</div>
+              <h4>Daily Edition 7000</h4>
+              <div class="product-meta"><span>7,000 puffs</span><span>5%</span></div>
+              <div class="product-footer">
+                <span class="product-price">Ksh 1,500</span>
+                <a href="https://wa.link/9jaeyj" target="_blank" class="add-btn">Order</a>
+              </div>
+            </div>
+          </div>
+
         </div>
         <div class="carousel-controls">
           <button class="carousel-btn prev" id="carouselPrev" aria-label="Previous">
