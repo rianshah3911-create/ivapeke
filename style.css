@@ -329,6 +329,12 @@ section {
   background: linear-gradient(to bottom, #000 0%, transparent 100%);
 }
 
+@media (max-width: 768px) {
+  .categories-section::before {
+    display: none;
+  }
+}
+
 /* ── Marquee ────────────────────────────── */
 .marquee-wrap {
   overflow: hidden;
@@ -982,7 +988,7 @@ section {
   padding: 96px 0;
   overflow: hidden;
   text-align: center;
-  background: radial-gradient(ellipse 80% 60% at 50% 50%, #2e0060 0%, #130028 45%, #000 100%);
+  background: #161616;
 }
 
 /* glow removed */
@@ -1266,23 +1272,37 @@ section {
 
   section { padding: 52px 0 !important; }
 
-  /* ── Hero → Categories: remove black gap ── */
-  .categories-section { padding-bottom: 40px !important; }
-  .categories-section::before { height: 0 !important; }
+  /* ── Hero → Categories: kill the black gap completely ── */
+  .categories-section {
+    padding-top: 0 !important;
+    padding-bottom: 36px !important;
+  }
+  .categories-section::before { height: 0 !important; margin: 0 !important; }
 
-  /* ── Bestsellers: compact on mobile ── */
-  .bestsellers { padding: 40px 0 0 !important; }
-  .cov-wrap { padding: 16px 0 40px !important; }
+  /* ── Bestsellers: compact heading-to-cards gap ── */
+  .bestsellers { padding: 36px 0 0 !important; }
+  .bestsellers .section-title { margin-bottom: 12px !important; }
+  .cov-wrap { padding: 6px 0 32px !important; }
 
-  /* ── Testimonials: fix overflow + smaller text ── */
+  /* ── Testimonials: fix cut-off + reduce size ── */
   .testimonials { overflow: hidden; }
-  .tslider-viewport { overflow: hidden; max-width: 100%; }
-  .tslider-card { padding: 20px 18px !important; }
-  .tslider-card p { font-size: 0.78rem !important; line-height: 1.7 !important; }
-  .tcard-stars { font-size: 0.65rem !important; }
-  .tcard-meta strong { font-size: 0.75rem !important; }
-  .tcard-meta span { font-size: 0.62rem !important; }
-  .testimonials-header { margin-bottom: 24px; }
+  .tslider-viewport { overflow: hidden; position: relative; width: 100%; }
+  .tslider-track { gap: 0 !important; }   /* must match JS gap=0 for vc=1 */
+  .tslider-card {
+    padding: 16px 14px !important;
+    overflow: hidden;
+  }
+  .tslider-card p {
+    font-size: 0.72rem !important;
+    line-height: 1.65 !important;
+    margin-bottom: 14px !important;
+  }
+  .tcard-stars { font-size: 0.6rem !important; letter-spacing: 1px !important; }
+  .tcard-meta strong { font-size: 0.72rem !important; }
+  .tcard-meta span { font-size: 0.6rem !important; }
+  .tcard-avatar { width: 28px !important; height: 28px !important; font-size: 0.55rem !important; }
+  .tcard-divider { margin-bottom: 12px !important; }
+  .testimonials-header { margin-bottom: 20px !important; }
 }
 
 @media (max-width: 480px) {
